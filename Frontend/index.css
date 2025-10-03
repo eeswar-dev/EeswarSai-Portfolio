@@ -1,0 +1,63 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container */
+.logo-container {
+  width: 100%;
+  text-align:center;
+}
+
+/* SVG Styling */
+.logo {
+  width: 80%;
+  max-width: 700px;
+}
+
+.logo text {
+  font-size: 60px;
+  font-weight: bold;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 3s forwards, glow 2s infinite alternate 3s;
+}
+
+/* Animation: Line Drawing Effect */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Animation: Glow Effect */
+@keyframes glow {
+  from {
+    fill: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 5px #ffffff, 0 0 7px #ffffff, 2px 2px 10px #ffffff;
+  }
+  to {
+    fill: dark gray;
+    text-shadow: 0 0 1px 1px 2px rgba(0, 0, 0, 0.5),  0 0 1em blue,0 0 0.2em blue;
+  }
+}
+
+setTimeout(()=>{
+     document.getElementId('intsetTimeout(() => {
+        document.getElementById("intro-sound").play();
+      }, 3000); // matches logo animation time
